@@ -28,3 +28,5 @@ urlpatterns = [
     path('eliminar_producto/<int:pk>', eliminar_producto, name="del-prods"),
     path('contacto/', mensaje_contacto),
 ]
+
+#oe
