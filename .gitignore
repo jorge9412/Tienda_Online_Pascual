@@ -7,7 +7,7 @@
 *.xlsm
 *.pickle
 .vscode
-/settings.py
+/settings.py¨
 
 
 venv
