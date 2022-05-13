@@ -81,9 +81,9 @@ DATABASES = {
 		'ENGINE': 'django.db.backends.postgresql_psycopg2',
 		'NAME' : 'TiendaOnlineBD',
 		'USER' : 'postgres',
-		'PASSWORD' : 'coke24838014',
+		'PASSWORD' : 'Cambiar.100*',
 		'HOST' : 'localhost',
-		'PORT' : 5432, 
+		'PORT' : 5433, 
 	}
 }
 
