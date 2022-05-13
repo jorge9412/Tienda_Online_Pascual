@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'inventario',
-    'contacto'
+    'contacto',
 ]
 
 MIDDLEWARE = [
@@ -79,11 +79,11 @@ WSGI_APPLICATION = 'tienda_online.wsgi.application'
 DATABASES = {
 	'default': {
 		'ENGINE': 'django.db.backends.postgresql_psycopg2',
-		'NAME' : 'TiendaOnlineDB',
-		'USER' : 'postgres',
-		'PASSWORD' : 'coke24838014',
+		'NAME' : 'prueba',
+		'USER' : 'danilo',
+		'PASSWORD' : 'Cambiar.100*',
 		'HOST' : 'localhost', #si tienes otra dirección host debes remplazar esta
-		'PORT' : 5432 #si lo dejas vacío tomara el puerto por default
+		'PORT' : 5433 #si lo dejas vacío tomara el puerto por default
 	}
 }
 
