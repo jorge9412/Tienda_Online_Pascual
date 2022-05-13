@@ -22,7 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('busqueda_productos/', vista_busqueda_productos),
     path('obtener_producto/', obtener_producto),
-    path('agregar_producto/', agregar_producto),#, name='add-prods'
+    path('agregar_producto/', agregar_producto,name='add-prods'),
     path('mostrar_productos/', mostrar_productos, name='show-prods'),
     path('editar_producto/<int:pk>', editar_producto, name='edit-prods'),
     path('eliminar_producto/<int:pk>', eliminar_producto, name="del-prods"),

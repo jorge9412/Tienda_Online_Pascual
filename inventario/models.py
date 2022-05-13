@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Productos(models.Model):
-    id_producto = models.CharField(primary_key = True, max_length=50 , default="")
+    id_producto = models.AutoField(primary_key = True)
     name = models.CharField(max_length=30)
     category = models.CharField(max_length=30)
     cost = models.IntegerField(default=0)
