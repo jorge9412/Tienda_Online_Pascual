@@ -38,7 +38,7 @@ def agregar_producto(request):
         return render (request, "add_products.html")
 
 def editar_producto(request,pk):
-    producto = Productos.objects.get(id=pk)
+    producto = Productos.objects.get(id_producto=pk)
     if request.method == 'POST':
 
         producto.name = request.POST["nombre"]
@@ -59,7 +59,7 @@ def editar_producto(request,pk):
 
 def eliminar_producto(request, pk):
 
-    producto = Productos.objects.get(id=pk)
+    producto = Productos.objects.get(id_producto=pk)
 
     if request.method == 'POST':
         producto.delete()

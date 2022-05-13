@@ -1,23 +1,26 @@
 <head>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"crossorigin="anonymous"></script>
     <title>
         Agregar producto
     </title>
 </head>
 
 <body>
-    <h1>Agregar nuevo producto: </h1>
+    <h1 align = "center" >Agregar nuevo producto: </h1>
 
-    <form action="/agregar_producto/" method="POST">{% csrf_token%}
+    <form style=" width: 50vw; margin-left : 25vw;" action="/agregar_producto/" method="POST">{% csrf_token%}
+            <p>nombre: <input type="text" name="nombre" class = "form-control"></p>
+            <p>categoria: <input type="text" name="categoria"class = "form-control"></p>
+            <p>costo: <input type="text" name="costo"class = "form-control"></p>
+            <p>stock: <input type="text" name="stock"class = "form-control"></p>
+            <p>descripcion: <input type="text" name="descripcion"class = "form-control"></p>
+            <button align= "left" type="submit" class="btn btn-success">Agregar producto</button>            
 
-        <p>nombre: <input type="text" name="nombre"></p>
-        <p>categoria: <input type="text" name="categoria"></p>
-        <p>costo: <input type="text" name="costo"></p>
-        <p>stock: <input type="text" name="stock"></p>
-        <p>descripcion: <input type="text" name="descripcion"></p>
-        <input type="submit" value="Agregar producto">
     </form>
-    <form action="/mostrar_productos/" method="POST">{% csrf_token%}
-        <input type="submit" value="Ver productos">
+
+    <form style=" width: 50vw; margin-left : 25vw;"  action="/mostrar_productos/" method="POST">{% csrf_token%}
+            
+            <button type="submit" class="btn btn-success">Ver productos</button>
     </form>
 </body>
