@@ -18,6 +18,7 @@ from django.urls import path
 from inventario.views import editar_producto, eliminar_producto, mostrar_productos, vista_busqueda_productos, obtener_producto, agregar_producto, mostrar_productos, editar_producto, eliminar_producto
 from contacto.views import mensaje_contacto
 from login.views import login_app
+from ventas.views import ventas_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,4 +30,5 @@ urlpatterns = [
     path('eliminar_producto/<int:pk>', eliminar_producto, name="del-prods"),
     path('contacto/', mensaje_contacto),
     path('login/', login_app),
+    path('ventas/', ventas_view,name='ventas'),
 ]
