@@ -4,19 +4,16 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{% static 'css/login.css' %}" >
-
 </head>
 <body>
-  <style>
-    * 
-</style>
+
 <section>
   <h2>Bienvenido tienda Online</h2>
 </section>
 
 <div class="bg-img" style = "background-image: url('{% static 'img/img_paisaje.jpg' %}')">
   <form action="/action_page.php" class="container">
-    <h1>Iniciar sesión</h1>
+    <h1 class ="titulo">Iniciar sesión</h1>
 
     <label for="email"><b>Correo</b></label>
     <input type="text" placeholder="Enter Email" name="email" required>
