@@ -1,5 +1,4 @@
 from django.db import models
-from sqlalchemy import true
 
 # Create your models here.
 class Productos(models.Model):

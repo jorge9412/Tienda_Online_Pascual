@@ -7,7 +7,12 @@
 *.xlsm
 *.pickle
 .vscode
-/settings.py¨
+/settings.py
+*.png
+*.jpg
+*.jpeg
+*.pyc
+*.gif
 
 
 venv
