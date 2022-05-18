@@ -9,19 +9,19 @@
 <body>
     <h1 align = "center" >Agregar nuevo producto: </h1>
 
-    <form style=" width: 50vw; margin-left : 25vw;" action="/agregar_producto/" method="POST">{% csrf_token%}
+    <form enctype="multipart/form-data" style=" width: 50vw; margin-left : 25vw;" action="/agregar_producto/" method="POST">{% csrf_token%}
             <p>nombre: <input type="text" name="nombre" class = "form-control"></p>
             <p>categoria: <input type="text" name="categoria"class = "form-control"></p>
             <p>costo: <input type="text" name="costo"class = "form-control"></p>
             <p>stock: <input type="text" name="stock"class = "form-control"></p>
             <p>descripcion: <input type="text" name="descripcion"class = "form-control"></p>
-            <button align= "left" type="submit" class="btn btn-success">Agregar producto</button>            
-
+            <p><input type="file" name = "imagen"></input></p>
+            <button align= "left" type="submit" class="btn btn-success">Agregar producto</button>   
+            
     </form>
 
     <form style=" width: 50vw; margin-left : 25vw;"  action="/mostrar_productos/" method="POST">{% csrf_token%}
             
             <button type="submit" class="btn btn-success">Ver productos</button>
     </form>
-    
 </body>
