@@ -1,19 +1,13 @@
-body, html {
-    height: 100%;
+  body, html {
+    height: 70%;
   }
   
   * {
     box-sizing: border-box;
   }
   .bg-img {
-
-    min-height: 500px;
-  
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+    background: rgb(0,73,100);
+    background: linear-gradient(0deg, rgba(0,73,100,1) 0%, rgba(193,215,132,1) 100%);
   }
   
   /* Add styles to the form container */
@@ -44,7 +38,7 @@ body, html {
   
   /* Set a style for the submit button */
   .btn {
-    background-color: #0e2746;
+    background-color: #004964;
     color: white;
     padding: 16px 20px;
     border: none;
@@ -66,7 +60,7 @@ section {
     width: 100%;
     height: 20vh;
     overflow: hidden;
-    background: #0e2746;
+    background: #004964;
     display: flex;
     justify-content: center;
     align-items: center;
