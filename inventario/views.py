@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from inventario.forms_inventario import DocumentoForm
 from inventario.models import Productos
 
 # Create your views here.
@@ -22,13 +23,13 @@ def mostrar_productos(request):
 def agregar_producto(request):
 
     if request.method=="POST":
-
         nombre = request.POST["nombre"]
         categoria = request.POST["categoria"]
         costo = request.POST["costo"]
         stock = request.POST["stock"]
         descripcion = request.POST["descripcion"]
-        data = Productos(name=nombre, category=categoria, cost=costo, cantidad_stock= stock, description=descripcion)
+        imagen = request.FILES["imagen"]
+        data = Productos(name=nombre, category=categoria, cost=costo, cantidad_stock= stock, description=descripcion,imagen=imagen)
         data.save()
 
         return redirect('/mostrar_productos/')
