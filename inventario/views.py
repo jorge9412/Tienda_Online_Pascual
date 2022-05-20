@@ -1,5 +1,8 @@
+
+import os
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from sympy import product
 from inventario.forms_inventario import DocumentoForm
 from inventario.models import Productos
 
@@ -41,7 +44,10 @@ def agregar_producto(request):
 def editar_producto(request,pk):
     producto = Productos.objects.get(id_producto=pk)
     if request.method == 'POST':
-
+        if len(request.FILES) !=0:
+            if len(producto.imagen)>0:
+                os.remove(producto.imagen.path)
+            producto.imagen = request.FILES['imagen']
         producto.name = request.POST["nombre"]
         producto.category = request.POST["categoria"]
         producto.cost = request.POST["costo"]

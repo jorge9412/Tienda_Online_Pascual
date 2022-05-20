@@ -12,10 +12,10 @@
     <form enctype="multipart/form-data" style=" width: 50vw; margin-left : 25vw;" action="/agregar_producto/" method="POST">{% csrf_token%}
             <p>nombre: <input type="text" name="nombre" class = "form-control"></p>
             <p>categoria: <input type="text" name="categoria"class = "form-control"></p>
-            <p>costo: <input type="number" max="8" name="costo"class = "form-control"></p>
-            <p>stock: <input type="number" max="8" name="stock"class = "form-control"></p>
+            <p>costo: <input type="number" name="costo"class = "form-control"></p>
+            <p>stock: <input type="number" name="stock"class = "form-control"></p>
             <p>descripcion: <input type="text" name="descripcion"class = "form-control"></p>
-            <p><input type="file" name = "imagen" accept="image/*"></input></p>
+            <p><input type="file" name = "imagen" required accept="image/*"></input></p>
             <button align= "left" type="submit" class="btn btn-success">Agregar producto</button>   
             
     </form>
