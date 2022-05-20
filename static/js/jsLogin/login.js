@@ -1,6 +1,6 @@
 function createBubble() {
     const section = 
-        document.querySelector("Section");
+        document.getElementById("otraCosa");
     const createElement = 
         document.createElement("span");
     var size = Math.random() * 60;
