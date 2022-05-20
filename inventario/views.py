@@ -2,7 +2,6 @@
 import os
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from sympy import product
 from inventario.forms_inventario import DocumentoForm
 from inventario.models import Productos
 

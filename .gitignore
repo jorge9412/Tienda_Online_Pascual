@@ -8,7 +8,6 @@
 *.pickle
 .vscode
 /settings.py
-*.png
 *.jpg
 *.jpeg
 *.pyc
