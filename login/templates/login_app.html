@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css'%}">
 	<link rel="stylesheet" type="text/css" href="{% static 'vendorLogin/animate/animate.css'%}">	
 	<link rel="stylesheet" type="text/css" href="{% static 'vendorLogin/css-hamburgers/hamburgers.min.css'%}">
-	<link rel="stylesheet" type="text/css" href="{% static 'vendorLogin/select2/select2.min.css'">
+	<link rel="stylesheet" type="text/css" href="{% static 'vendorLogin/select2/select2.min.css'%}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/cssLogin/util.css'%}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/cssLogin/main.css'%}">
 </head>
@@ -20,7 +20,7 @@
         <img src="{% static 'img/imgLogin.png'%}" alt="IMG">
       </div>
 
-      <form class="login100-form validate-form">
+      <form class="login100-form validate-form"action="/login_app/" method="POST">{% csrf_token%}
         <span class="login100-form-title">
           Iniciar sesión
         </span>

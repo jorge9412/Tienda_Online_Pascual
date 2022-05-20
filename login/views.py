@@ -7,6 +7,7 @@ from login.forms_login import Login
 
 
 def login_app(request):
+    print("entre")
 
     if request.method=="POST":
 
