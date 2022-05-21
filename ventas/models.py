@@ -1,3 +1,4 @@
+from django import db
 from django.db import models
 from sqlalchemy import false
 
@@ -12,6 +13,6 @@ class Venta(models.Model):
     direccion = models.CharField(max_length=30)
     depto = models.CharField(max_length=30)
     ciudad = models.CharField(max_length=30)
-    telefono = models.IntegerField(max_length=30)
+    telefono = models.IntegerField(default=0)
     id_producto = models.OneToOneField(Productos,on_delete=models.CASCADE,
                                         blank=False,null=False)
