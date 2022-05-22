@@ -33,7 +33,7 @@ urlpatterns = [
     path('contacto/', mensaje_contacto),
     path('login/', login_app),
     path('guardarVenta/<int:pk>', guardar_venta),
-    path('', ventas_view,name='ventas'),
+    path('ventas/', ventas_view),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

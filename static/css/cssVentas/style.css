@@ -1143,3 +1143,6 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 .product-upper :hover{
     filter: brightness(100%);
 }
+.modal-body table .entrega{
+    background: #1bd172;
+}
