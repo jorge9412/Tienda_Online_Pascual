@@ -1,6 +1,7 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from inventario.models import Productos
+from ventas.models import Venta
 
 
 def ventas_view(request):
@@ -8,21 +9,30 @@ def ventas_view(request):
     return render(request,'ventas.html',{'productos':productos})
 
 def guardar_venta(request,pk):
-    producto = Productos.objects.get(id_producto=pk)
-    if request.method == 'POST':
-        
-        producto.name = request.POST["nombre"]
-        producto.category = request.POST["categoria"]
-        producto.cost = request.POST["costo"]
-        producto.cantidad_stock = request.POST["stock"]
-        producto.description = request.POST["descripcion"]
-        producto.save()
-        return redirect('/mostrar_productos/')
+    producto = Productos.objects.get(id_producto=pk) 
+    context = {
+        'productos': producto,
+    }
+    return render(request,'guardarVenta.html',context)
+
+def guardar_venta2(request): 
+ 
+    if request.method == 'POST':        
+        id = request.POST["id"]
+        nombreCom = request.POST["txt_nombres"]
+        tipoDoc = request.POST["select_tipo_doc"]
+        numDoc = request.POST["txt_num_doc"]
+        correoDoc = request.POST["txt_correo"]
+        direccionDoc = request.POST["txt_direccion"]
+        deptoDoc = request.POST["select_depto"]
+        ciudadDoc = request.POST["select_ciudad"]
+        telefonoDoc = request.POST["txt_telefono"]
+        totalVenta = request.POST["cos"]
+        data = Venta(nombres=nombreCom, tipo_doc=tipoDoc, num_doc=numDoc, 
+                            correo= correoDoc, direccion=direccionDoc,depto=deptoDoc,ciudad=ciudadDoc,
+                            telefono=telefonoDoc,id_producto_id = id ,total_venta=totalVenta)
+        data.save()
+        return redirect('/ventas/')
 
     else:
-
-        context = {
-            'productos': producto,
-        }
-
-        return render(request,'guardarVenta.html',context)
+        return render (request, "ventas.html")
