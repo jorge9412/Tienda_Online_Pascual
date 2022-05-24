@@ -1,6 +1,5 @@
 from django import db
 from django.db import models
-from sqlalchemy import false
 
 from inventario.models import Productos
 

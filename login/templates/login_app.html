@@ -20,7 +20,7 @@
         <img src="{% static 'img/imgLogin.png'%}" alt="IMG">
       </div>
 
-      <form class="login100-form validate-form"action="/login_app/" method="POST">{% csrf_token%}
+      <form class="login100-form validate-form"action="/login_app" method="POST">{% csrf_token%}
         <span class="login100-form-title">
           Iniciar sesión
         </span>
@@ -77,28 +77,6 @@
 			scale: 1.1
 		})
 	</script>
-<script src="{% static 'js/jsLogin/login.js' %}"></script> 
 <script src="{% static 'js/jsLogin/main.js' %}"></script>
-
-<script type="text/javascript">
-  function createBubble() {
-      const section = document.querySelector("Section");
-      const createElement = document.createElement("span");
-      var size = Math.random() * 60;
-
-      createElement.style.animation = 
-        "animation 6s linear infinite";
-      createElement.style.width = 180 + size + "px";
-      createElement.style.height = 180 + size + "px";
-      createElement.style.left = 
-        Math.random() * innerWidth + "px";
-      section.appendChild(createElement);
-
-      setTimeout(() => {
-          createElement.remove();
-      }, 4000);
-  }
-  setInterval(createBubble, 100);
-</script>
 </body>
 </html>
