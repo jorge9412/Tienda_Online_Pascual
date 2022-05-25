@@ -8,17 +8,10 @@ def ventas_view(request):
     productos = Productos.objects.all().order_by('id_producto')
     return render(request,'ventas.html',{'productos':productos})
 
-def guardar_venta(request,pk):
-    producto = Productos.objects.get(id_producto=pk) 
-    context = {
-        'productos': producto,
-    }
-    return render(request,'guardarVenta.html',context)
-
-def guardar_venta2(request): 
- 
+def guardar_venta(request,pk): 
+    producto = Productos.objects.get(id_producto=pk)
     if request.method == 'POST':        
-        id = request.POST["id"]
+        id = producto.id_producto
         nombreCom = request.POST["txt_nombres"]
         tipoDoc = request.POST["select_tipo_doc"]
         numDoc = request.POST["txt_num_doc"]
@@ -27,12 +20,19 @@ def guardar_venta2(request):
         deptoDoc = request.POST["select_depto"]
         ciudadDoc = request.POST["select_ciudad"]
         telefonoDoc = request.POST["txt_telefono"]
-        totalVenta = request.POST["cos"]
+
+        #producto.cantidad_stock = request.POST[stok]
         data = Venta(nombres=nombreCom, tipo_doc=tipoDoc, num_doc=numDoc, 
                             correo= correoDoc, direccion=direccionDoc,depto=deptoDoc,ciudad=ciudadDoc,
-                            telefono=telefonoDoc,id_producto_id = id ,total_venta=totalVenta)
+                            telefono=telefonoDoc,id_producto_id = id ,total_venta=0)
         data.save()
-        return redirect('/ventas/')
+        producto.cantidad_stock -= 1
+        producto.save()             
+        return redirect('ventas')
 
     else:
-        return render (request, "ventas.html")
+        context = {
+        'productos': producto,
+        }
+        return render(request,'guardarVenta.html',context)
+    

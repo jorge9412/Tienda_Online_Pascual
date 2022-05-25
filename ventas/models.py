@@ -14,5 +14,5 @@ class Venta(models.Model):
     ciudad = models.CharField(max_length=30)
     telefono = models.IntegerField(default=0)
     total_venta = models.DecimalField(max_digits=50,decimal_places=3,null =False)    
-    id_producto = models.OneToOneField(Productos,on_delete=models.CASCADE,
+    id_producto = models.ForeignKey(Productos,on_delete=models.CASCADE,
                                         blank=False,null=False)

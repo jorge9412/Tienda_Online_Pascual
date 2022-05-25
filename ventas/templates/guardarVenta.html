@@ -26,9 +26,7 @@
                     <h4 class ="modal-title">¿Quieres comprar el articulo:  {{productos.name}}?<br><img src="{{productos.imagen.url}}" alt="" width = "90px" align = "rigth"></br></h4>                                        
                 </div>        
                 <div class ="modal-body">
-                    <form method="POST" enctype="multipart/form-data" action="/guardarVenta2/">{% csrf_token %}
-                    <input value = "{{productos.id_producto}}" name ="id"></input> 
-                    <input value = "{{productos.cost}}" name ="cos"></input>                       
+                    <form method="POST" enctype="multipart/form-data" action="/guardarVenta/{{productos.id_producto}}">{% csrf_token %}                       
                         <h3 align ="center"><bold>DATOS DE ENTREGA</bold></h3>
                         <div class="container-fluid">
                             <div class="row">
