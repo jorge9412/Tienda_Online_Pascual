@@ -815,6 +815,17 @@ input[type="submit"]:hover, button[type=submit]:hover {background-color: #222}
     color: #fff;
     padding: 6px 25px;display: inline-block
 }
+
+.add_to_cart_buttonbutton:disabled,
+ button[disabled]{
+    background: none repeat scroll 0 0 #eaeaea;
+    color: #FFFFFF;
+    border: medium none;
+    padding: 6px 25px;display: inline-block
+}
+
+
+
 .add_to_cart_button:hover {background-color: #222;color: #fff;text-decoration: none}
 form.cart {
     margin-bottom: 25px;
@@ -1122,12 +1133,9 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
   color: #5a88ca;
 }
 .product-upper{
-
     width:300px;
     height:300px;
-    margin-bottom: 30px;
     object-fit:cover;
-
     cursor: pointer;
     animation: escalar 1.5s infinite alternate;
 }
@@ -1145,4 +1153,12 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 }
 .modal-body table .entrega{
     background: #1bd172;
+}
+
+.product-upper img{
+    position:absolute;
+    height:200px;
+    width:200px;
+    top: 40px;
+    right: 120px;
 }
