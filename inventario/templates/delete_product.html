@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 
@@ -5,6 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/cssVentas/bootstrap.min.css'%}">
     <title>Eliminar Producto</title>
 </head>
 
@@ -14,17 +16,16 @@
 
         <br><br>
         <div class="alert alert-danger" role="alert">
-            <h1 align = "center">¿Esta seguro de eliminar el producto "{{ producto.name}}"?<h1/>
+            <h1 align = "center">¿Esta seguro de eliminar el producto <a style ="color:red">"{{ producto.name}}"</a>?<h1/>
         </div>
 
-        <p>
-            <a href="{% url 'show-prods' %}"><-- Retornar</a>
-        </p>
-
-        <p>
-            <input class="btn btn-danger" type="submit" value="Confirmar">
+        <p align = "center">
+            <button class = "btn btn-success" type = "submit" value="Confirmar" > CONFIRMAR</button> 
         </p>
     </form>
+    <p align ="center">
+        <a href="{% url 'show-prods' %}"> <button class = "btn btn-danger"> RETORNAR </button> </a>        
+    </p>
 </body>
 
 </html>
