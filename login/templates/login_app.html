@@ -20,12 +20,12 @@
         <img src="{% static 'img/imgLogin.png'%}" alt="IMG">
       </div>
 
-      <form class="login100-form validate-form"action="/login_app" method="POST">{% csrf_token%}
+      <form class="login100-form validate-form" action="/iniciar_sesion" method="POST">{% csrf_token%}
         <span class="login100-form-title">
           Iniciar sesión
         </span>
 
-        <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+        <div class="wrap-input100 validate-input" data-validate = "El correo es obligatorio: example@gmail.com">
           <input class="input100" type="text" name="email" placeholder="Correo">
           <span class="focus-input100"></span>
           <span class="symbol-input100">
@@ -33,7 +33,7 @@
           </span>
         </div>
 
-        <div class="wrap-input100 validate-input" data-validate = "Password is required">
+        <div class="wrap-input100 validate-input" data-validate = "La contraseña es obligatoria.">
           <input class="input100" type="password" name="pass" placeholder="Contraseña">
           <span class="focus-input100"></span>
           <span class="symbol-input100">

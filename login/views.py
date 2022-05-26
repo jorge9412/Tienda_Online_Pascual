@@ -1,16 +1,23 @@
 from distutils.log import Log
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from login.forms_login import Login
 from django.contrib.messages import constants as messages
 # Create your views here.
+ 
 
+def iniciar_sesion(request):
+    if request.method=="POST":
+        email = request.POST["email"]
+        password = request.POST["password"]
+        data = Login(email=email, password=password)
+
+        return redirect('/ventas')
+    
+    else:
+        return render (request, "login_app.html")
 
 def login_app(request):
-    MESSAGE_TAGS = {
-    messages.INFO: 'prueba',
-    50: 'critical',
-    }
 
     if request.method=="POST":
 
