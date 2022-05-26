@@ -83,8 +83,10 @@ def enviarCorreoComprador(correoDoc,nombreCom,nomProducto,costo,direccionDoc):
         print("Ocurrio un error enviando correo al cliente")
         
 def enviarCorreoAdmin(nombreCom,nomProducto,costo):
-    correos_superusuarios = User.objects.filter(is_superuser=True).values_list('email') 
-    correoUsuario = correos_superusuarios[0]   
+    correos_superusuarios = User.objects.filter(is_superuser=True).values_list('email')
+    nombres_superusuarios = User.objects.filter(is_superuser=True).values_list('username') 
+    correoAdmin = correos_superusuarios[0] 
+    nombreAdmin = nombres_superusuarios[0]  
     today = datetime.now()
     fecha = today.strftime('%b %d, %Y')
     
@@ -103,12 +105,12 @@ def enviarCorreoAdmin(nombreCom,nomProducto,costo):
 
         
 
-        """% (fecha,correoUsuario,textoMensaje)
+        """% (fecha,nombreAdmin,textoMensaje)
         #correos_superusuarios = User.objects.filter(is_superuser=True).values_list('email')
         server = smtplib.SMTP('smtp.gmail.com',587)
         server.starttls()
         server.login('jorgecorreos9412@gmail.com','')
-        server.sendmail('jorgecorreos9412@gmail.com',correoUsuario,message)
+        server.sendmail('jorgecorreos9412@gmail.com',correoAdmin,message)
         server.quit()
     except:
         print("Ocurrio un error enviando a correo al admin")
