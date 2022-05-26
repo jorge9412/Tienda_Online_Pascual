@@ -34,7 +34,7 @@ urlpatterns = [
     path('login/', login_app),
     path('guardarVenta/<int:pk>', guardar_venta),
     path('guardarVenta2/', guardar_venta2),
-    path('', ventas_view),
+    path('', ventas_view,name="ventas"),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

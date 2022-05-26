@@ -1,3 +1,6 @@
+from django import forms
 from django.db import models
 
-# Create your models here.
+class Login(forms.Form):
+    email = forms.EmailField()
+    password = forms.PasswordInput()
