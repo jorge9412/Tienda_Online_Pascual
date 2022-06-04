@@ -24,16 +24,14 @@ def guardar_venta(request,pk):
         deptoDoc = request.POST["select_depto"]
         ciudadDoc = request.POST["select_ciudad"]
         telefonoDoc = request.POST["txt_telefono"]
-
-        #producto.cantidad_stock = request.POST[stok]
         data = Venta(nombres=nombreCom, tipo_doc=tipoDoc, num_doc=numDoc, 
                             correo= correoDoc, direccion=direccionDoc,depto=deptoDoc,ciudad=ciudadDoc,
                             telefono=telefonoDoc,id_producto_id = id ,total_venta=costo)
         data.save()
-
         nomProducto = producto.name        
         producto.cantidad_stock -= 1
         producto.save()
+        
         enviarCorreoComprador(correoDoc,nombreCom,nomProducto,costo,direccionDoc)
         enviarCorreoAdmin(nombreCom,nomProducto,costo) 
              
